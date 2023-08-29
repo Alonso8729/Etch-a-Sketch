@@ -16,8 +16,11 @@ function createGrid(size) {
         let cell = document.createElement('div');
         cell.style.setProperty('--cell-width', `${cellWidth}%`);
         cell.addEventListener('mouseenter', () => {
-            cell.style.backgroundColor
-                = '#596e79';
+            if (isRainbowMode)
+                cell.style.backgroundColor = getRandomColor();
+            else
+                cell.style.backgroundColor
+                    = '#596e79';
             console.log(cell.backgroundColor);
         });
         cell.style.backgroundColor = '#fafafa';
@@ -26,7 +29,7 @@ function createGrid(size) {
     }
 }
 
-function clearGrid(size) {
+function clearGrid() {
     const board = document.querySelector('.board');
 
     // Clear existing grid cells
@@ -34,7 +37,7 @@ function clearGrid(size) {
         board.removeChild(board.firstChild);
     }
 
-    createGrid(size)
+    createGrid(range.value)
 
 }
 
@@ -55,7 +58,7 @@ range.addEventListener('input', () => {
 rangeValue.textContent = range.value;
 
 //set grid size button event listener
-let set = document.getElementById('set-grid');
+let set = document.getElementById('set-grid-button');
 set.addEventListener('click', () => {
     createGrid(range.value);
 });
@@ -63,5 +66,25 @@ set.addEventListener('click', () => {
 //clear button event listener
 let clear = document.getElementById('clear');
 clear.addEventListener('click', () => {
-    clearGrid(range.value);
+    clearGrid();
 });
+
+/*Rainbow Mode - hovering color changes randomly*/
+//rainbow flag
+let isRainbowMode = false;
+
+let rainbow = document.getElementById('rainbow');
+rainbow.addEventListener('click', () => {
+    isRainbowMode = !isRainbowMode;
+});
+
+function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = '#';
+
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    return color;
+}

@@ -14,18 +14,23 @@
         <div class="second-container">
             <div class="board"> </div>
             <div class="buttons">
-                <label for="range"></label>
-                <input type="range" min="1" max="100" id="range" value="16">
-                <span id="rangeValue"></span>
+                <!-- <label for="range"></label>
+                    <!--<input type="range" min="1" max="100" id="range" value="16">
+                    <span id="rangeValue"></span>-->
+                <div class="range">
+                    <label for="range"></label>
+                    <input type="range" min="1" max="100" value="16" id="range" class="range-input" />
+                    <div id="rangeValue"></div>
+                </div>
                 <button id="set-grid-button">Set Size</button>
                 <button id="clear">Clear</button>
                 <button id="rainbow">Rainbow Mode</button>
             </div>
         </div>
-
-
-
-
+        <footer>
+            <p>&copy;2023 Alon Iserovitch <a href="https://github.com/Alonso8729"><img
+                        src="../Rock-Paper-Scissors/images/github-mark.png" alt="#"></a></p>
+        </footer>
         <script src="app.js"></script>
 </body>
 

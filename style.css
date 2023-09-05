@@ -82,6 +82,8 @@ h1 {
     color: #FFFFFF;
     font-weight: 800;
     font-size: 1.1rem;
+    position: relative;
+    bottom: 6px;
 }
 
 button {

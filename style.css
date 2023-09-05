@@ -3,6 +3,8 @@
     src: url(Fonts/MyFont.ttf);
 }
 
+
+
 body {
     background-color: #49beb7;
     display: flex;
@@ -77,6 +79,9 @@ h1 {
 
 #rangeValue {
     margin-left: 10px;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 1.1rem;
 }
 
 button {
@@ -113,6 +118,9 @@ footer {
     display: flex;
     justify-content: baseline;
     margin-top: 2em;
+    color: #fafafa;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 footer img {
